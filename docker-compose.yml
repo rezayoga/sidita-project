@@ -7,7 +7,7 @@ services:
       dockerfile: ./../sidita-auth-service/auth-service.dockerfile
     restart: always
     ports:
-      - "10.66.66.2:8080:8080"
+      - "8080:8080"
     deploy:
       mode: replicated
       replicas: 1
@@ -18,7 +18,7 @@ services:
       dockerfile: ./../sidita-project-service/project-service.dockerfile
     restart: always
     ports:
-      - "10.66.66.2:8081:8081"
+      - "8081:8081"
     deploy:
       mode: replicated
       replicas: 1
