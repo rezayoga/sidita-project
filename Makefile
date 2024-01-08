@@ -20,7 +20,7 @@ up_build: build_auth build_project build_logger
 ## down: stop docker compose
 down:
 	@echo "Stopping docker compose..."
-	docker-compose down -v --remove-orphans
+	docker-compose down
 	@echo "Done!"
 
 ## build_auth: builds the auth binary as a linux executable
