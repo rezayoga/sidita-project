@@ -20,23 +20,23 @@ up_build: build_auth build_project build_logger
 ## down: stop docker compose
 down:
 	@echo "Stopping docker compose..."
-	docker-compose down
+	docker-compose down -v --remove-orphans
 	@echo "Done!"
 
 ## build_auth: builds the auth binary as a linux executable
 build_auth:
 	@echo "Building auth binary..."
-	cd ../auth-service && env GOOS=linux CGO_ENABLED=0 go build -o ${AUTH_BINARY} ./cmd/app
+	cd ../sidita-auth-service && env GOOS=linux CGO_ENABLED=0 go build -o ${AUTH_BINARY} ./cmd/app
 	@echo "Done!"
 
 ## build_project: builds the project binary as a linux executable
 build_project:
 	@echo "Building project binary..."
-	cd ../project-service && env GOOS=linux CGO_ENABLED=0 go build -o ${PROJECT_BINARY} ./cmd/app
+	cd ../sidita-project-service && env GOOS=linux CGO_ENABLED=0 go build -o ${PROJECT_BINARY} ./cmd/app
 	@echo "Done!"
 
 ## build_logger: builds the logger binary as a linux executable
 build_logger:
 	@echo "Building logger binary..."
-	cd ../logger-service && env GOOS=linux CGO_ENABLED=0 go build -o ${LOGGER_BINARY} ./cmd/app
+	cd ../sidita-logger-service && env GOOS=linux CGO_ENABLED=0 go build -o ${LOGGER_BINARY} ./cmd/app
 	@echo "Done!"
