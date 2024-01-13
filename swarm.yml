@@ -9,7 +9,7 @@ services:
       mode: replicated
       replicas: 1
     environment:
-      JWT_ISSUER: "PLN PUSMANPRO"
+      JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "103.175.219.64"
       COOKIE_DOMAIN: "103.175.219.64"
       APP_DOMAIN: "103.175.219.64"
@@ -39,7 +39,7 @@ services:
       mode: replicated
       replicas: 1
     environment:
-      JWT_ISSUER: "PLN PUSMANPRO"
+      JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "103.175.219.64"
       COOKIE_DOMAIN: "103.175.219.64"
       APP_DOMAIN: "103.175.219.64"
