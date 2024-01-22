@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: rezayoga/auth-service:0.0.16
+    image: rezayoga/auth-service:0.0.17
     ports:
       - "8080:8080"
     deploy:
@@ -18,6 +18,7 @@ services:
       DSN: "host=103.175.221.64 port=5432 user=postgres password=p05tgR3s51^d1T4 dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5"
       REDIS_DSN: "redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@103.175.221.64:6379/0"
       JWT_SECRET: "7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE"
+      SEAWEEDFS_FILER: "http://103.175.221.64:8888" 
 
   logger-service:
     image: rezayoga/logger-service:0.0.14
@@ -32,7 +33,7 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true"#
 
   project-service:
-    image: rezayoga/project-service:0.0.15
+    image: rezayoga/project-service:0.0.16
     ports:
       - "8081:8081"
     deploy:
@@ -48,3 +49,4 @@ services:
       DSN: "host=103.175.221.64 port=5432 user=postgres password=p05tgR3s51^d1T4 dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5"
       REDIS_DSN: "redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@103.175.221.64:6379/0"
       JWT_SECRET: "7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE"
+      SEAWEEDFS_FILER: "http://103.175.221.64:8888" 
