@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: rezayoga/auth-service:0.0.17
+    image: rezayoga/auth-service:0.0.18
     ports:
       - "8080:8080"
     deploy:
