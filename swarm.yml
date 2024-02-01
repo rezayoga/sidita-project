@@ -19,9 +19,6 @@ services:
       REDIS_DSN: "redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@103.175.221.64:6379/0"
       JWT_SECRET: "7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE"
       SEAWEEDFS_FILER: "http://103.175.221.64:8888"
-    networks:
-      sidita_network:
-        ipv4_address: 10.66.66.2
 
   logger-service:
     image: rezayoga/logger-service:0.0.14
@@ -53,14 +50,3 @@ services:
       REDIS_DSN: "redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@103.175.221.64:6379/0"
       JWT_SECRET: "7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE"
       SEAWEEDFS_FILER: "http://103.175.221.64:8888"
-    networks:
-      sidita_network:
-        ipv4_address: 10.66.66.2
-
-  networks:
-    sidita_network:
-      driver: bridge
-      ipam:
-        driver: default
-        config:
-          - subnet: 10.66.66.0/16
