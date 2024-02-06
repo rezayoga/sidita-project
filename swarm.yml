@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: rezayoga/auth-service:0.0.32
+    image: rezayoga/auth-service:0.0.33
     ports:
       - "8080:8080"
     deploy:
@@ -33,7 +33,7 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.3:27017/sidita?directConnection=true"#
 
   project-service:
-    image: rezayoga/project-service:0.0.25
+    image: rezayoga/project-service:0.0.26
     ports:
       - "8081:8081"
     deploy:
