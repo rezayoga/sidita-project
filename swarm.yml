@@ -55,5 +55,5 @@ services:
       SEAWEEDFS_FILER: "http://10.66.66.3:8888"
 
 secrets:
-  dsn:
+  sidita-api_dsn:
     file: dsn.txt
