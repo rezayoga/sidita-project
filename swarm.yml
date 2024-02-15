@@ -56,4 +56,4 @@ services:
 
 secrets:
   dsn:
-    file: dsn.txt
+    file: ./dsn.txt
