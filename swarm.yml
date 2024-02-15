@@ -16,7 +16,7 @@ services:
       LOGGER_SERVICE_PORT: "5001"
       LOGGER_SERVICE_HOST: logger-service
       # DSN: "host=10.66.66.3 port=5432 user=postgres password=p05tgR3s51^d1T4 dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5"
-      DSN: /run/secrets/dsn
+      DSN: /run/secrets/sidita-api_dsn
       REDIS_DSN: "redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.3:6379/0"
       JWT_SECRET: "7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE"
       SEAWEEDFS_FILER: "http://10.66.66.3:8888"
