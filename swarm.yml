@@ -8,11 +8,6 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-    entrypoint: source /data/entrypoint.sh
-    tmpfs:
-      - /run/secrets
-    volumes:
-      - /opt/sidita-api/sidita-project/:/data/
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "103.175.220.146"
