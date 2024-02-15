@@ -56,4 +56,4 @@ services:
 
 secrets:
   dsn:
-    external: true
+    file: dsn.txt
