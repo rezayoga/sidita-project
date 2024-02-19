@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: rezayoga/auth-service:0.0.39
+    image: rezayoga/auth-service:0.0.40
     ports:
       - "8080:8080"
     deploy:
@@ -22,7 +22,6 @@ services:
       SEAWEEDFS_FILER: "http://10.66.66.3:8888"
     secrets:
         - dsn
-      
 
   logger-service:
     image: rezayoga/logger-service:0.0.14
@@ -37,7 +36,7 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.3:27017/sidita?directConnection=true"#
 
   project-service:
-    image: rezayoga/project-service:0.0.30
+    image: rezayoga/project-service:0.0.31
     ports:
       - "8081:8081"
     deploy:
