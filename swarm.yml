@@ -36,7 +36,7 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.3:27017/sidita?directConnection=true"#
 
   project-service:
-    image: rezayoga/project-service:0.0.33
+    image: rezayoga/project-service:0.0.34
     ports:
       - "8081:8081"
     deploy:
