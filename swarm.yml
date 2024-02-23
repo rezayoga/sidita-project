@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: dptpusmanpro/auth-service:0.0.40
+    image: dptpusmanpro/auth-service:0.0.41
     ports:
       - "8080:8080"
     deploy:
@@ -24,7 +24,7 @@ services:
         - dsn
 
   logger-service:
-    image: dptpusmanpro/logger-service:0.0.14
+    image: dptpusmanpro/logger-service:0.0.15
     deploy:
       mode: replicated
       replicas: 1
