@@ -24,7 +24,7 @@ services:
         - dsn
 
   logger-service:
-    image: dptpusmanpro/logger-service:0.0.19
+    image: dptpusmanpro/logger-service:0.0.20
     deploy:
       mode: replicated
       replicas: 1
