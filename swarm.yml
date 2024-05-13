@@ -10,9 +10,9 @@ services:
       replicas: 1
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
-      JWT_AUDIENCE: "103.175.220.146"
-      COOKIE_DOMAIN: "103.175.220.146"
-      APP_DOMAIN: "103.175.220.146"
+      JWT_AUDIENCE: "api.rc-sidita.my.id"
+      COOKIE_DOMAIN: "api.rc-sidita.my.id"
+      APP_DOMAIN: "api.rc-sidita.my.id"
       LOGGER_SERVICE_PORT: "5001"
       LOGGER_SERVICE_HOST: logger-service
       DSN: "host=10.66.66.3 port=5432 user=postgres password=p05tgR3s51^d1T4 dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5"
@@ -44,9 +44,9 @@ services:
       replicas: 1
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
-      JWT_AUDIENCE: "103.175.220.146"
-      COOKIE_DOMAIN: "103.175.220.146"
-      APP_DOMAIN: "103.175.220.146"
+      JWT_AUDIENCE: "api.rc-sidita.my.id"
+      COOKIE_DOMAIN: "api.rc-sidita.my.id"
+      APP_DOMAIN: "api.rc-sidita.my.id"
       LOGGER_SERVICE_PORT: "5001"
       LOGGER_SERVICE_HOST: logger-service
       DSN: "host=10.66.66.3 port=5432 user=postgres password=p05tgR3s51^d1T4 dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5"
