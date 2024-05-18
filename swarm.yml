@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: dptpusmanpro/auth-service:0.0.75
+    image: dptpusmanpro/auth-service:0.0.76
     ports:
       - "8080:8080"
     deploy:
@@ -11,7 +11,10 @@ services:
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "api.rc-sidita.my.id"
-      COOKIE_DOMAIN: "api.rc-sidita.my.id"
+      # COOKIE_DOMAIN: "api.rc-sidita.my.id"
+      COOKIE_DOMAIN: ""
+      COOKIE_NAME: "__Host-sidita"
+      COOKIE_SECURE: "true"
       APP_DOMAIN: "api.rc-sidita.my.id"
       LOGGER_SERVICE_PORT: "5001"
       LOGGER_SERVICE_HOST: logger-service
@@ -45,7 +48,10 @@ services:
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "api.rc-sidita.my.id"
-      COOKIE_DOMAIN: "api.rc-sidita.my.id"
+      # COOKIE_DOMAIN: "api.rc-sidita.my.id"
+      COOKIE_DOMAIN: ""
+      COOKIE_NAME: "__Host-sidita"
+      COOKIE_SECURE: "true"
       APP_DOMAIN: "api.rc-sidita.my.id"
       LOGGER_SERVICE_PORT: "5001"
       LOGGER_SERVICE_HOST: logger-service
