@@ -11,8 +11,7 @@ services:
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "api.rc-sidita.my.id"
-      # COOKIE_DOMAIN: "api.rc-sidita.my.id"
-      COOKIE_DOMAIN: ""
+      COOKIE_DOMAIN: "api.rc-sidita.my.id"
       COOKIE_NAME: "__Host-sidita"
       COOKIE_SECURE: "true"
       APP_DOMAIN: "api.rc-sidita.my.id"
@@ -48,8 +47,7 @@ services:
     environment:
       JWT_ISSUER: "PUSMANPRO PLN"
       JWT_AUDIENCE: "api.rc-sidita.my.id"
-      # COOKIE_DOMAIN: "api.rc-sidita.my.id"
-      COOKIE_DOMAIN: ""
+      COOKIE_DOMAIN: "api.rc-sidita.my.id"
       COOKIE_NAME: "__Host-sidita"
       COOKIE_SECURE: "true"
       APP_DOMAIN: "api.rc-sidita.my.id"
