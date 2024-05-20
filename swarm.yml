@@ -2,7 +2,7 @@ version: '3'
 
 services:
   auth-service:
-    image: dptpusmanpro/auth-service:0.0.77
+    image: dptpusmanpro/auth-service:0.0.78
     ports:
       - "8080:8080"
     deploy:
