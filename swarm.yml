@@ -31,6 +31,8 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true"
       MONGO_DB_NAME: "sidita"
       MONGO_COLLECTION_NAME: "logs"
+      IAM_CLIENT_ID: "jY#KV7Ne!GaYz199qYyE"
+      IAM_CLIENT_SECRET: "FQJvYFhUJWrl@EPocbPDZy2eTMkYuJ"
     secrets:
         - dsn
 
