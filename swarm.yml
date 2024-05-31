@@ -35,6 +35,7 @@ services:
       IAM_CLIENT_SECRET: "FQJvYFhUJWrl@EPocbPDZy2eTMkYuJ"
       IAM_AUTH_URL: "https://iam.pln.co.id/svc-core/oauth2/auth"
       IAM_TOKEN_URL: "https://iam.pln.co.id/svc-core/oauth2/token"
+      IAM_ISSUER: "https://iam.pln.co.id/svc-core/oauth2"
     secrets:
         - dsn
 
