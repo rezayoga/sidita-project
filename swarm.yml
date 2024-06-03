@@ -36,7 +36,7 @@ services:
       IAM_AUTH_URL: "https://iam.pln.co.id/svc-core/oauth2/auth"
       IAM_TOKEN_URL: "https://iam.pln.co.id/svc-core/oauth2/token"
       IAM_ISSUER: "https://iam.pln.co.id/svc-core/oauth2"
-      IAM_HR_INFO_URL: "ttps://iam.pln.co.id/svc-core/account/hrinfo"
+      IAM_HR_INFO_URL: "https://iam.pln.co.id/svc-core/account/hrinfo"
       IAM_LOGOUT_URL: "https://iam.pln.co.id/svc-core/oauth2/session/end"
     secrets:
         - dsn
