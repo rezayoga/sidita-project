@@ -10,10 +10,15 @@ spec:
   template:
     metadata:
       labels:
-       name: auth-service
+        name: auth-service
     spec:
       containers:
-        - env:
+        - name: auth-service
+          image: dptpusmanpro/auth-service:0.0.79
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
             - name: APP_DOMAIN
               value: api.sidita.id
             - name: BASEURL
@@ -66,13 +71,7 @@ spec:
               value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
             - name: SEAWEEDFS_FILER
               value: http://10.66.66.5:8888
-          imagePullPolicy: Always
-          image: dptpusmanpro/auth-service:0.0.79
-          name: auth-service
-          ports:
-            - containerPort: 8080
-              protocol: TCP
-      restartPolicy: Always
+          restartPolicy: Always
 
 ---
 apiVersion: v1
@@ -87,21 +86,3 @@ spec:
       targetPort: 8080
   selector:
     name: auth-service
-
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: auth-ingress
-#   namespace: sidita-v3
-#   annotations:
-#     nginx.ingress.kubernetes.io/rewrite-target: /$2
-# spec:
-#   rules:
-#     host: api.sidita.id
-#     http:
-#     - paths:
-#         - path: /auth(/|$)(.*)
-#         - backend:
-#             - serviceName: auth-service
-#             - servicePort: 8080
