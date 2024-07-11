@@ -13,6 +13,8 @@ spec:
       labels:
         name: auth-service
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
       - env:
         - name: APP_DOMAIN
