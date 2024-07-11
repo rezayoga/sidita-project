@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,75 +14,74 @@ spec:
         name: auth-service
     spec:
       containers:
-        - name: auth-service
-          image: dptpusmanpro/auth-service:0.0.79
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8080
-          env:
-            - name: APP_DOMAIN
-              value: api.sidita.id
-            - name: BASEURL
-              value: https://api.sidita.id
-            - name: COOKIE_DOMAIN
-              value: .sidita.id
-            - name: COOKIE_NAME
-              value: __Secure-siditav3
-            - name: COOKIE_SECURE
-              value: "true"
-            - name: DSN
-              value: host=10.66.66.5 port=5432 user=postgres password=51DiT4_POst6R3sQL dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5
-            - name: IAM_AUTH_URL
-              value: https://iam.pln.co.id/svc-core/oauth2/auth
-            - name: IAM_CLIENT_ID
-              value: PvYW2FxACt5IXqSQSvbY
-            - name: IAM_CLIENT_SECRET
-              value: FQJvYFhUJWrl@EPocbPDZy2eTMkYuJ
-            - name: IAM_HR_INFO_URL
-              value: https://iam.pln.co.id/svc-core/account/hrinfo
-            - name: IAM_ISSUER
-              value: https://iam.pln.co.id/svc-core/oauth2
-            - name: IAM_LOGOUT_URL
-              value: https://iam.pln.co.id/svc-core/oauth2/session/end
-            - name: IAM_TOKEN_URL
-              value: https://iam.pln.co.id/svc-core/oauth2/token
-            - name: JWT_AUDIENCE
-              value: api.sidita.id
-            - name: JWT_ISSUER
-              value: PUSMANPRO PLN
-            - name: JWT_SECRET
-              value: 7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE
-            - name: LOGGER_SERVICE_HOST
-              value: logger-service
-            - name: LOGGER_SERVICE_PORT
-              value: "5001"
-            - name: MONGO_COLLECTION_NAME
-              value: logs
-            - name: MONGO_DB
-              value: sidita
-            - name: MONGO_DB_NAME
-              value: sidita
-            - name: MONGO_DSN
-              value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true
-            - name: MONGO_PASSWORD
-              value: ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp
-            - name: MONGO_USER
-              value: adminUser
-            - name: REDIS_DSN
-              value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
-            - name: SEAWEEDFS_FILER
-              value: http://10.66.66.5:8888
-
+      - env:
+        - name: APP_DOMAIN
+          value: api.sidita.id
+        - name: BASEURL
+          value: https://api.sidita.id
+        - name: COOKIE_DOMAIN
+          value: .sidita.id
+        - name: COOKIE_NAME
+          value: __Secure-siditav3
+        - name: COOKIE_SECURE
+          value: "true"
+        - name: DSN
+          value: host=10.66.66.5 port=5432 user=postgres password=51DiT4_POst6R3sQL
+            dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5
+        - name: IAM_AUTH_URL
+          value: https://iam.pln.co.id/svc-core/oauth2/auth
+        - name: IAM_CLIENT_ID
+          value: PvYW2FxACt5IXqSQSvbY
+        - name: IAM_CLIENT_SECRET
+          value: FQJvYFhUJWrl@EPocbPDZy2eTMkYuJ
+        - name: IAM_HR_INFO_URL
+          value: https://iam.pln.co.id/svc-core/account/hrinfo
+        - name: IAM_ISSUER
+          value: https://iam.pln.co.id/svc-core/oauth2
+        - name: IAM_LOGOUT_URL
+          value: https://iam.pln.co.id/svc-core/oauth2/session/end
+        - name: IAM_TOKEN_URL
+          value: https://iam.pln.co.id/svc-core/oauth2/token
+        - name: JWT_AUDIENCE
+          value: api.sidita.id
+        - name: JWT_ISSUER
+          value: PUSMANPRO PLN
+        - name: JWT_SECRET
+          value: 7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE
+        - name: LOGGER_SERVICE_HOST
+          value: logger-service
+        - name: LOGGER_SERVICE_PORT
+          value: "5001"
+        - name: MONGO_COLLECTION_NAME
+          value: logs
+        - name: MONGO_DB
+          value: sidita
+        - name: MONGO_DB_NAME
+          value: sidita
+        - name: MONGO_DSN
+          value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true
+        - name: MONGO_PASSWORD
+          value: ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp
+        - name: MONGO_USER
+          value: adminUser
+        - name: REDIS_DSN
+          value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
+        - name: SEAWEEDFS_FILER
+          value: http://10.66.66.5:8888
+        image: dptpusmanpro/auth-service:0.0.79
+        imagePullPolicy: Always
+        name: auth-service
+        ports:
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: auth-service
 spec:
-  type: NodePort
   ports:
-    - name: "8080"
-      port: 8080
-      targetPort: 8080
+  - name: "8080"
+    port: 8080
   selector:
     name: auth-service
+  type: NodePort
