@@ -86,4 +86,4 @@ spec:
     port: 8080
   selector:
     name: auth-service
-  type: NodePort
+  type: ClusterIP
