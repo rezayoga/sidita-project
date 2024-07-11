@@ -38,8 +38,6 @@ services:
       IAM_ISSUER: "https://iam.pln.co.id/svc-core/oauth2"
       IAM_HR_INFO_URL: "https://iam.pln.co.id/svc-core/account/hrinfo"
       IAM_LOGOUT_URL: "https://iam.pln.co.id/svc-core/oauth2/session/end"
-    secrets:
-        - dsn
 
   logger-service:
     image: dptpusmanpro/logger-service:0.0.20
@@ -106,8 +104,3 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true"
       MONGO_DB_NAME: "sidita"
       MONGO_COLLECTION_NAME: "logs"
-    secrets:
-        - dsn
-secrets:
-  dsn:
-    file: ./dsn.txt
