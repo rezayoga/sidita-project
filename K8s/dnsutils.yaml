@@ -9,6 +9,7 @@ spec:
     nameservers:
       - 8.8.8.8
       - 4.4.4.4
+      - 103.25.111.154
   containers:
   - name: dnsutils
     image: tutum/dnsutils
