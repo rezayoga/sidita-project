@@ -5,6 +5,9 @@ metadata:
   name: auth-service
   namespace: sidita-v3
 spec:
+  restartPolicy: Always
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
   replicas: 1
   selector:
     matchLabels:
