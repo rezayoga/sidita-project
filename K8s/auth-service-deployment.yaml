@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth-service
+  namespace: sidita-v3
 spec:
   replicas: 1
   selector:
