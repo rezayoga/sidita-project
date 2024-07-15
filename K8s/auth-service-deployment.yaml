@@ -85,4 +85,3 @@ spec:
     port: 8080
   selector:
     name: auth-service
-  type: LoadBalancer
