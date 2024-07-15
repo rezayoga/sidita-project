@@ -18,7 +18,7 @@ spec:
       dnsConfig:
         nameservers:
           - 8.8.8.8
-          - 103.25.111.154 
+          - 10.152.183.10 
       imagePullSecrets:
         - name: regcred
       containers:
