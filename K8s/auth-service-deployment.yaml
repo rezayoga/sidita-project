@@ -19,6 +19,13 @@ spec:
         nameservers:
           - 8.8.8.8
           - 10.152.183.10 
+        searches:
+          - sidita-v3.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+        options:
+          - name: ndots
+            value: "2"
       imagePullSecrets:
         - name: regcred
       containers:
