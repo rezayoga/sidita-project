@@ -80,8 +80,13 @@ kind: Service
 metadata:
   name: auth-service
 spec:
+  type: LoadBalancer
   ports:
-  - name: "8080"
-    port: 8080
+  - name: "dns"
+    port: 53
+  - name: "http"
+    port: 80
+  - name: "https"
+    port: 443
   selector:
     name: auth-service
