@@ -83,7 +83,7 @@ metadata:
   name: auth-service
   namespace: sidita-v3
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - name: "app"
     port: 8080
