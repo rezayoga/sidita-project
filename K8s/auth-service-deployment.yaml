@@ -18,6 +18,7 @@ spec:
       dnsConfig:
         nameservers:
           - 8.8.8.8
+          - 10.66.66.1
         searches:
           - sidita.id
       imagePullSecrets:
@@ -90,11 +91,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: "dns"
-    port: 53
-  - name: "http"
-    port: 80
-  - name: "https"
-    port: 443
+  - name: "app"
+    port: 8080
   selector:
     name: auth-service
