@@ -81,7 +81,7 @@ spec:
           value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
         - name: SEAWEEDFS_FILER
           value: http://10.66.66.5:8888
-        image: dptpusmanpro/auth:0.0.79
+        image: dptpusmanpro/auth-service:0.0.79
         imagePullPolicy: Always
         name: auth
         ports:
