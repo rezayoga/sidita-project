@@ -4,6 +4,18 @@ metadata:
   name: dnsutils
   namespace: sidita-v3
 spec:
+  dnsPolicy: None
+  dnsConfig:
+    nameservers:
+      - 8.8.8.8
+      - 10.152.183.10 
+    searches:
+      - sidita-v3.svc.cluster.local
+      - svc.cluster.local
+      - cluster.local
+    options:
+      - name: ndots
+        value: "2"
   containers:
   - name: dnsutils
     image: tutum/dnsutils
