@@ -4,10 +4,17 @@ metadata:
   name: dnsutils
   namespace: sidita-v3
 spec:
-  dnsPolicy: ClusterFirstWithHostNet
   containers:
   - name: dnsutils
     image: tutum/dnsutils
     command:
       - sleep
       - "3600"
+  dnsPolicy: Default  # or ClusterFirstWithHostNet
+  dnsConfig:
+    nameservers:
+      - 8.8.8.8        # Example: Google DNS
+      - 8.8.4.4
+    options:
+      - name: ndots
+        value: "2"     # Example: Set ndots
