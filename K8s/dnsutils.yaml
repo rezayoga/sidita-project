@@ -2,15 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: dnsutils
+  namespace: default
 spec:
   containers:
   - name: dnsutils
-    image: tutum/dnsutils
+    image: infoblox/dnstools
     command:
       - sleep
       - "3600"
-  dnsPolicy: None  # or ClusterFirstWithHostNet
-  dnsConfig:
-    nameservers:
-      - 8.8.8.8        # Example: Google DNS
-      - 8.8.4.4   # Example: Set ndots
+  restartPolicy: Never
