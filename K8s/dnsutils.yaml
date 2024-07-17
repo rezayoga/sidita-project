@@ -10,4 +10,6 @@ spec:
     command:
       - sleep
       - "3600"
-  restartPolicy: Never
+  restartPolicy: Always
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
