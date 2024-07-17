@@ -10,7 +10,7 @@ spec:
     command:
       - sleep
       - "3600"
-  dnsPolicy: Default  # or ClusterFirstWithHostNet
+  dnsPolicy: ClusterFirstWithHostNet  # or ClusterFirstWithHostNet
   dnsConfig:
     nameservers:
       - 8.8.8.8        # Example: Google DNS
