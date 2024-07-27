@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth
+  namespace: sidita-v3
 spec:
   replicas: 1
   selector:
@@ -13,18 +14,6 @@ spec:
       labels:
         name: auth
     spec:
-      dnsPolicy: None
-      dnsConfig:
-        nameservers:
-          - 8.8.8.8
-          - 10.152.183.10 
-        searches:
-          - sidita-v3.svc.cluster.local
-          - svc.cluster.local
-          - cluster.local
-        options:
-          - name: ndots
-            value: "2"
       imagePullSecrets:
         - name: regcred
       containers:
