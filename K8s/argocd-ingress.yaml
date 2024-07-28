@@ -17,7 +17,7 @@ spec:
             name: argocd-server
             port:
               number: 80
-  tls:
-  - hosts:
-    - argocd.sidita.id
-    secretName: argo-cd-tls
+  # tls:
+  # - hosts:
+  #   - argocd.sidita.id
+  #   secretName: argo-cd-tls
