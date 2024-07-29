@@ -44,6 +44,8 @@ Setiap layanan memiliki tanggung jawab yang spesifik dan berkomunikasi satu sama
 Setiap service pada SIDITA v3 memiliki environment variable yang harus dikonfigurasi pada file konfigurasi K8s yang akan digunakan untuk menyimpan seluruh variable yang akan digunakan oleh aplikasi. 
 
 Services SIDITA v3 hosted pada repository Docker, berikut registry repository SIDITA v3:
+- Frontend Service:
+    - dptpusmanpro/nextjs-sidita
  - Service Auth:
    	- dptpusmanpro/auth-service 	
  - Dashboard Service:
