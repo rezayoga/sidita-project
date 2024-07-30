@@ -65,7 +65,7 @@ Deployments Steps:
 7. Konfigurasi propagasi Naming Service
 8. Start Deploy!
 
-#### Environment Variables
+#### Docker Compose Configuration File dan Environment Variables
 ```yaml
 version: '3'
 
