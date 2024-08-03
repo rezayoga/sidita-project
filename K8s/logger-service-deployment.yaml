@@ -22,7 +22,7 @@ spec:
           - name: MONGO_DB
             value: sidita
           - name: MONGO_DSN
-            value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.3:27017/sidita?directConnection=true
+            value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.5:27017/sidita?directConnection=true
           - name: MONGO_PASSWORD
             value: ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp
           - name: MONGO_USER

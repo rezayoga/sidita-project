@@ -28,7 +28,7 @@ spec:
             - name: COOKIE_SECURE
               value: "true"
             - name: DSN
-              value: host=10.66.66.3 port=5432 user=postgres password=51DiT4_POst6R3sQL dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5
+              value: host=10.66.66.5 port=5432 user=postgres password=51DiT4_POst6R3sQL dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5
             - name: JWT_AUDIENCE
               value: api.sidita.id
             - name: JWT_ISSUER
@@ -46,15 +46,15 @@ spec:
             - name: MONGO_DB_NAME
               value: sidita
             - name: MONGO_DSN
-              value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true
+              value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.5:27017/sidita?directConnection=true
             - name: MONGO_PASSWORD
               value: ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp
             - name: MONGO_USER
               value: adminUser
             - name: REDIS_DSN
-              value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.3:6379/0
+              value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
             - name: SEAWEEDFS_FILER
-              value: http://10.66.66.3:8888
+              value: http://10.66.66.5:8888
           image: dptpusmanpro/dashboard-service:0.0.1
           imagePullPolicy: Always
           name: dashboard
