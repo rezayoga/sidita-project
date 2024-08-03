@@ -66,3 +66,11 @@ kind: Service
 metadata:
   name: dashboard
   namespace: sidita-v3
+spec:
+  type: ClusterIP
+  selector:
+    name: dashboard
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8083

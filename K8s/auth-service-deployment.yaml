@@ -81,5 +81,9 @@ metadata:
   name: auth-service
   namespace: sidita-v3
 spec:
-  type: ExternalName
-  externalName: iam.pln.co.id
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    name: auth

@@ -52,3 +52,11 @@ kind: Service
 metadata:
   namespace: sidita-v3
   name: project
+spec:
+  selector:
+    name: project
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+  type: ClusterIP

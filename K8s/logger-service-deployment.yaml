@@ -38,3 +38,11 @@ kind: Service
 metadata:
   namespace: sidita-v3
   name: logger-service
+spec:
+  type: ClusterIP
+  selector:
+    name: logger
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 8082
