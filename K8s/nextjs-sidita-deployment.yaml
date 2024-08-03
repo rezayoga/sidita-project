@@ -53,7 +53,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nextjs-sidita
-  namespace: your-namespace
+  namespace: sidita-v3
 spec:
   type: ClusterIP
   selector:
