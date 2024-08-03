@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f /opt/sidita-project/swarm.yml convert -v
+    kompose.version: 1.34.0 (cbf2835db)
+  labels:
+    io.kompose.service: project-service
+  name: project-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: project-service
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f /opt/sidita-project/swarm.yml convert -v
+        kompose.version: 1.34.0 (cbf2835db)
+      labels:
+        io.kompose.service: project-service
+    spec:
+      containers:
+        - env:
+            - name: APP_DOMAIN
+              value: api.rc-sidita.my.id
+            - name: COOKIE_DOMAIN
+              value: .rc-sidita.my.id
+            - name: COOKIE_NAME
+              value: __Secure-siditav3
+            - name: COOKIE_SECURE
+              value: "true"
+            - name: DSN
+              value: host=10.66.66.3 port=5432 user=postgres password=51DiT4_POst6R3sQL dbname=sidita-v3 sslmode=disable timezone=UTC+7 connect_timeout=5
+            - name: JWT_AUDIENCE
+              value: api.rc-sidita.my.id
+            - name: JWT_ISSUER
+              value: PUSMANPRO PLN
+            - name: JWT_SECRET
+              value: 7E0eH-Jck1Dc2pKRdrZwEUTWbYKf2-S4rhKil_dalHF-ht2lCnrDHufZUng037tY7PNJNf_UEVd8Qqb1GgHS-lzEPK-N0pTWHMZj5U36ODeC7n13vLU0IWLh46xnkc1WWghWJz1oh4j87mNzmQjDlaQodoICaoOxglY1xbr9moE
+            - name: LOGGER_SERVICE_HOST
+              value: logger-service
+            - name: LOGGER_SERVICE_PORT
+              value: "5001"
+            - name: REDIS_DSN
+              value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.3:6379/0
+            - name: SEAWEEDFS_FILER
+              value: http://10.66.66.3:8888
+          image: dptpusmanpro/project-service:0.0.111
+          name: project-service
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+      restartPolicy: Always

@@ -26,5 +26,3 @@ api
 .vscode/
 
 *.log%
-
-K8s/
