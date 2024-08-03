@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: sidita-v3
-  name: logger
+  name: logger-deployment
 spec:
   replicas: 1
   selector:

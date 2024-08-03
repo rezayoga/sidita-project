@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dashboard
+  name: dashboard-deployment
   namespace: sidita-v3
 spec:
   replicas: 1

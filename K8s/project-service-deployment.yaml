@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: sidita-v3
-  name: project
+  name: project-deployment
 spec:
   replicas: 1
   selector:
