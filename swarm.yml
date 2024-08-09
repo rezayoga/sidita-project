@@ -31,7 +31,7 @@ services:
       MONGO_DSN: "mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true"
       MONGO_DB_NAME: "sidita"
       MONGO_COLLECTION_NAME: "logs"
-      IAM_CLIENT_ID: "PvYW2FxACt5IXqSQSvbY"
+      IAM_CLIENT_ID: "QVgtnw#YGJh#9QRd!Zra"
       IAM_CLIENT_SECRET: "FQJvYFhUJWrl@EPocbPDZy2eTMkYuJ"
       IAM_AUTH_URL: "https://iam.pln.co.id/svc-core/oauth2/auth"
       IAM_TOKEN_URL: "https://iam.pln.co.id/svc-core/oauth2/token"
