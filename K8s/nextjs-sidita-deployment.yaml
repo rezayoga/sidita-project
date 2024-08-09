@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextjs-sidita-deployment
+  namespace: sidita-v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextjs-sidita
+  template:
+    metadata:
+      labels:
+        app: nextjs-sidita
+    spec:
+      containers:
+      - env:
+        - name: NEXT_PUBLIC_API_URL
+          value: https://be.sidita.id
+        - name: NEXT_PUBLIC_API
+          value: https://dev.sidita.id
+        - name: NEXT_PUBLIC_SECRET_CRYPTO
+          value: sidita
+        - name: NEXT_PUBLIC_WEBSOCKET_URL
+          value: wss://be.sidita.id
+        - name: NEXT_SHARP_PATH
+          value: /tmp/node_modules/sharp
+        - name: NEXTAUTH_URL
+          value: https://dev.sidita.id
+        - name: SENTRY_PUBLIC_DNS
+          value: https://773c07701f51e77babfde8fcd96a4732@o4506845836148736.ingest.us.sentry.io/4507507465125888
+        - name: SENTRY_PUBLIC_TOKEN
+          value: sntrys_eyJpYXQiOjE3MTk1NDY5ODAuOTU2NjEzLCJ1cmwiOiJodHRwczovL3NlbnRyeS5pbyIsInJlZ2lvbl91cmwiOiJodHRwczovL3
+        - name: SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING
+          value: "1"
+        - name: SENTRY_IGNORE_API_RESOLUTION_ERROR
+          value: "1"
+        image: dptpusmanpro/nextjs-sidita:456
+        imagePullPolicy: Always
+        name: nextjs-sidita
+        volumeMounts:
+        - mountPath: /tmp/node_modules/sharp
+          name: sharp-cache
+      imagePullSecrets:
+      - name: regcred
+      ports:
+      - containerPort: 3000
+      volumes:
+      - name: sharp-cache
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextjs-sidita
+  namespace: sidita-v3
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: nextjs-sidita

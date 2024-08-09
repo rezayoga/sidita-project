@@ -1,8 +1,7 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth
+  name: auth-deployment
   namespace: sidita-v3
 spec:
   replicas: 1
@@ -61,7 +60,7 @@ spec:
         - name: MONGO_DB_NAME
           value: sidita
         - name: MONGO_DSN
-          value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@103.175.221.64:27017/sidita?directConnection=true
+          value: mongodb://adminUser:ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp@10.66.66.5:27017/sidita?directConnection=true
         - name: MONGO_PASSWORD
           value: ZXgwB6pHmh0hVPLKAjZECSCBd9yucdTILxohUQ7QoGHrt7DwDp
         - name: MONGO_USER
@@ -82,5 +81,9 @@ metadata:
   name: auth-service
   namespace: sidita-v3
 spec:
-  type: ExternalName
-  externalName: iam.pln.co.id
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    name: auth
