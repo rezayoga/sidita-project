@@ -80,6 +80,13 @@ spec:
         volumeMounts:
         - mountPath: /tmp/node_modules/sharp
           name: sharp-cache
+        resources:
+          requests:
+            cpu: "128m" # Minimum amount of CPU required
+            memory: "128Mi" # Optional, but recommended to specify
+          limits:
+            cpu: "1024m" # Maximum amount of CPU allowed
+            memory: "512Mi" # Optional, but recommended to specify
       imagePullSecrets:
       - name: regcred
       ports:
