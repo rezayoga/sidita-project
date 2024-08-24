@@ -12,17 +12,17 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: auth-deployment
-  targetCPUUtilizationPercentage: 75
-  targetMemoryUtilizationPercentage: 75
-  # metrics:
-  # - type: Resource
-  #   resource:
-  #     name: cpu
-  #     targetAverageUtilization: 75
-  # - type: Resource
-  #   resource:
-  #     name: memory
-  #     targetAverageUtilization: 75
+  # targetCPUUtilizationPercentage: 75
+  # targetMemoryUtilizationPercentage: 75
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 75
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageUtilization: 75
 # Service
 ---
 apiVersion: v1
