@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: sidita.id
+    - host: app.sidita.id
       http:
         paths:
           - path: /
