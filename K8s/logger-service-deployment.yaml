@@ -1,3 +1,36 @@
+# HorizontalPodAutoscaler
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: logger-hpa
+  namespace: sidita-v3
+spec:
+  minReplicas: 1
+  maxReplicas: 10
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: logger-deployment
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
+# Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: sidita-v3
+  name: logger-service
+spec:
+  type: ClusterIP
+  selector:
+    name: logger
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+# Deployment
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,17 +65,3 @@ spec:
         name: logger
         ports:
         - containerPort: 8082
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: sidita-v3
-  name: logger-service
-spec:
-  type: ClusterIP
-  selector:
-    name: logger
-  ports:
-    - protocol: TCP
-      port: 5001
-      targetPort: 5001

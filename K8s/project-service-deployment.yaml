@@ -1,3 +1,36 @@
+# HorizontalPodAutoscaler
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: project-hpa
+  namespace: sidita-v3
+spec:
+  minReplicas: 1
+  maxReplicas: 10
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: project-deployment
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
+# Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: sidita-v3
+  name: project-service
+spec:
+  selector:
+    name: project
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+  type: ClusterIP
+# Deployment
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,7 +53,7 @@ spec:
           - name: APP_DOMAIN
             value: api.sidita.id
           - name: COOKIE_DOMAIN
-            value: .rc-sidita.my.id
+            value: .sidita.id
           - name: COOKIE_NAME
             value: __Secure-siditav3
           - name: COOKIE_SECURE
@@ -41,22 +74,10 @@ spec:
             value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
           - name: SEAWEEDFS_FILER
             value: http://10.66.66.5:8888
+          - name: SEAWEEDFS_FILER_READ
+            value: http://10.66.66.5:8888
           image: dptpusmanpro/project-service:0.0.111
           name: project
           imagePullPolicy: Always
           ports:
           - containerPort: 8081
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: sidita-v3
-  name: project-service
-spec:
-  selector:
-    name: project
-  ports:
-    - protocol: TCP
-      port: 8081
-      targetPort: 8081
-  type: ClusterIP

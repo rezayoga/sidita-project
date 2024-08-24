@@ -1,3 +1,32 @@
+# HorizontalPodAutoscaler
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nextjs-sidita-hpa
+  namespace: sidita-v3
+spec:
+  minReplicas: 1
+  maxReplicas: 10
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nextjs-sidita-deployment
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
+# Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextjs-sidita
+  namespace: sidita-v3
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: nextjs-sidita
+# Deployment
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -17,17 +46,17 @@ spec:
       containers:
       - env:
         - name: NEXT_PUBLIC_API_URL
-          value: https://be.sidita.id
+          value: https://api.sidita.id
         - name: NEXT_PUBLIC_API
-          value: https://dev.sidita.id
+          value: https://sidita.id
         - name: NEXT_PUBLIC_SECRET_CRYPTO
           value: sidita
         - name: NEXT_PUBLIC_WEBSOCKET_URL
-          value: wss://be.sidita.id
+          value: wss://api.sidita.id
         - name: NEXT_SHARP_PATH
           value: /tmp/node_modules/sharp
         - name: NEXTAUTH_URL
-          value: https://dev.sidita.id
+          value: https://sidita.id
         - name: SENTRY_PUBLIC_DNS
           value: https://773c07701f51e77babfde8fcd96a4732@o4506845836148736.ingest.us.sentry.io/4507507465125888
         - name: SENTRY_PUBLIC_TOKEN
@@ -48,14 +77,4 @@ spec:
       - containerPort: 3000
       volumes:
       - name: sharp-cache
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nextjs-sidita
-  namespace: sidita-v3
-spec:
-  ports:
-  - port: 3000
-  selector:
-    app: nextjs-sidita
+

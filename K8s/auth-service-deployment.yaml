@@ -1,3 +1,34 @@
+# HorizontalPodAutoscaler
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: auth-hpa
+  namespace: sidita-v3
+spec:
+  minReplicas: 1
+  maxReplicas: 10
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: auth-deployment
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
+# Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service
+  namespace: sidita-v3
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    name: auth
+# Deployment
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -43,6 +74,8 @@ spec:
           value: https://iam.pln.co.id/svc-core/oauth2/session/end
         - name: IAM_TOKEN_URL
           value: https://iam.pln.co.id/svc-core/oauth2/token
+        - name: IAM_POST_LOGOUT_REDIRECT_URI
+          value: https://app.sidita.id/login?l=true
         - name: JWT_AUDIENCE
           value: api.sidita.id
         - name: JWT_ISSUER
@@ -69,21 +102,10 @@ spec:
           value: redis://:vDBAAwyqiEz4%2F9OupVhu59hrRk3VT4SqsrMDVKqp8E3NTv3vUJCSX4lIs8t9tcGT7rV666OFPEFZGKFw@10.66.66.5:6379/0
         - name: SEAWEEDFS_FILER
           value: http://10.66.66.5:8888
+        - name: SEAWEEDFS_FILER_READ
+          value: http://10.66.66.5:8888
         image: dptpusmanpro/auth-service:0.0.79
         imagePullPolicy: Always
         name: auth
         ports:
         - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: auth-service
-  namespace: sidita-v3
-spec:
-  type: ClusterIP
-  ports:
-  - port: 8080
-    targetPort: 8080
-  selector:
-    name: auth
