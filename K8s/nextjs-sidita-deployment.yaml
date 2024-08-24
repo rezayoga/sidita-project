@@ -1,6 +1,6 @@
 # HorizontalPodAutoscaler
 ---
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: nextjs-sidita-hpa
@@ -12,17 +12,20 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: nextjs-sidita-deployment
-  targetCPUUtilizationPercentage: 75
-  targetMemoryUtilizationPercentage: 75
-  # metrics:
-  # - type: Resource
-  #   resource:
-  #     name: cpu
-  #     targetAverageUtilization: 75
-  # - type: Resource
-  #   resource:
-  #     name: memory
-  #     targetAverageUtilization: 75
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 75
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 75
+
 # Service
 ---
 apiVersion: v1
@@ -37,6 +40,7 @@ spec:
     targetPort: 3000
   selector:
     app: nextjs-sidita
+
 # Deployment
 ---
 apiVersion: apps/v1
@@ -55,7 +59,10 @@ spec:
         app: nextjs-sidita
     spec:
       containers:
-      - env:
+      - name: nextjs-sidita
+        image: dptpusmanpro/nextjs-sidita:456
+        imagePullPolicy: Always
+        env:
         - name: NEXT_PUBLIC_API_URL
           value: https://api.sidita.id
         - name: NEXT_PUBLIC_API
@@ -76,23 +83,20 @@ spec:
           value: "1"
         - name: SENTRY_IGNORE_API_RESOLUTION_ERROR
           value: "1"
-        image: dptpusmanpro/nextjs-sidita:456
-        imagePullPolicy: Always
-        name: nextjs-sidita
+        ports:
+        - containerPort: 3000
         volumeMounts:
         - mountPath: /tmp/node_modules/sharp
           name: sharp-cache
         resources:
           requests:
-            cpu: "128m" # Minimum amount of CPU required
-            memory: "128Mi" # Optional, but recommended to specify
+            cpu: "128m"
+            memory: "128Mi"
           limits:
-            cpu: "1024m" # Maximum amount of CPU allowed
-            memory: "512Mi" # Optional, but recommended to specify
+            cpu: "1024m"
+            memory: "512Mi"
       imagePullSecrets:
       - name: regcred
-      ports:
-      - containerPort: 3000
       volumes:
       - name: sharp-cache
-
+        emptyDir: {}  # Example volume type; change if needed
