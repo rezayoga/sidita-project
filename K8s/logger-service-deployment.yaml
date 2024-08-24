@@ -64,3 +64,10 @@ spec:
         name: logger
         ports:
         - containerPort: 8082
+    resources:
+        requests:
+          cpu: "128m" # Minimum amount of CPU required
+          memory: "128Mi" # Optional, but recommended to specify
+        limits:
+          cpu: "1024m" # Maximum amount of CPU allowed
+          memory: "512Mi" # Optional, but recommended to specify
