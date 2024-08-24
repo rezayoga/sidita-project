@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nextjs-sidita
+  name: nextjs-sidita-service
   namespace: sidita-v3
 spec:
   ports:
