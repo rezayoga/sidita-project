@@ -22,7 +22,6 @@ metadata:
   name: dashboard-service
   namespace: sidita-v3
 spec:
-  type: ClusterIP
   selector:
     name: dashboard
   ports:

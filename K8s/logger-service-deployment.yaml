@@ -22,7 +22,6 @@ metadata:
   namespace: sidita-v3
   name: logger-service
 spec:
-  type: ClusterIP
   selector:
     name: logger
   ports:
