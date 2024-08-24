@@ -37,7 +37,7 @@ metadata:
   labels:
     tier: backend
 spec:
-  ingressClassName: nginx
+  # ingressClassName: nginx
   rules:
     - host: api.sidita.id
       http:
