@@ -32,7 +32,8 @@ metadata:
   namespace: sidita-v3
 spec:
   ports:
-  - port: 8080
+  - protocol: TCP
+    port: 8080
     targetPort: 8080
   selector:
     name: auth

@@ -32,7 +32,9 @@ metadata:
   namespace: sidita-v3
 spec:
   ports:
-  - port: 3000
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
   selector:
     app: nextjs-sidita
 # Deployment
