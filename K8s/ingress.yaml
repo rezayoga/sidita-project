@@ -9,9 +9,10 @@ metadata:
   labels:
     tier: frontend
 spec:
-  # ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     - host: app.sidita.id
+      secretName: frontend-tls
       http:
         paths:
           - path: /
@@ -41,9 +42,10 @@ metadata:
   labels:
     tier: backend
 spec:
-  # ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     - host: api.sidita.id
+      secretName: backend-tls
       http:
         paths:
         - pathType: Prefix
