@@ -16,7 +16,7 @@ spec:
   tls:
     - hosts:
         - app.sidita.id
-      secretName: nginx-cert-frontend
+      secretName: frontend-tls
   rules:
     - host: app.sidita.id
       http:
@@ -53,7 +53,7 @@ spec:
   tls:
     - hosts:
         - api.sidita.id
-      secretName: nginx-cert-backend
+      secretName: backend-tls
   rules:
     - host: api.sidita.id
       http:
