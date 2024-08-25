@@ -8,7 +8,7 @@ metadata:
   #   nginx.ingress.kubernetes.io/proxy-body-size: "0"
   annotations:
     traefik.ingress.kubernetes.io/router.tls: "true"
-    cert-manager.io/issuer: "le-example-http"
+    cert-manager.io/issuer: letsencrypt-cert-manager
   labels:
     tier: frontend
 spec:
@@ -40,12 +40,13 @@ metadata:
     # nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
     # nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type"
     # nginx.ingress.kubernetes.io/cors-expose-headers: "Authorization"
- #   nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/cors-allow-origin: "https://app.sidita.id"
     traefik.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
     traefik.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type"
     traefik.ingress.kubernetes.io/cors-expose-headers: "Authorization"
+    cert-manager.io/issuer: letsencrypt-cert-manager
   labels:
     tier: backend
 spec:
