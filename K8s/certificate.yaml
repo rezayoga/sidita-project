@@ -1,0 +1,31 @@
+# Create a certificate for the frontend and backend services
+# Frontend: app.sidita.id
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-cert-frontend
+  namespace: default
+spec:
+  commonName: app.sidita.id
+  secretName: nginx-cert-frontend
+  dnsNames:
+    - app.sidita.id
+  issuerRef:
+    kind: Issuer
+    name: letsencrypt-staging
+# Backend: api.sidita.id
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-cert-backend
+  namespace: default
+spec:
+  commonName: api.sidita.id
+  secretName: nginx-cert-backend
+  dnsNames:
+    - api.sidita.id
+  issuerRef:
+    kind: Issuer
+    name: letsencrypt-staging
