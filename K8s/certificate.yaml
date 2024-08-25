@@ -5,7 +5,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: nginx-cert-frontend
-  namespace: default
+  namespace: sidita-v3
 spec:
   commonName: app.sidita.id
   secretName: nginx-cert-frontend
@@ -20,7 +20,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: nginx-cert-backend
-  namespace: default
+  namespace: sidita-v3
 spec:
   commonName: api.sidita.id
   secretName: nginx-cert-backend

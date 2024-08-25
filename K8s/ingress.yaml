@@ -8,6 +8,7 @@ metadata:
   #   nginx.ingress.kubernetes.io/proxy-body-size: "0"
   annotations:
     traefik.ingress.kubernetes.io/router.tls: "true"
+    cert-manager.io/issuer: "le-example-http"
   labels:
     tier: frontend
 spec:

@@ -1,7 +1,8 @@
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: letsencrypt-staging
+  name: letsencrypt-cert-manager
+  namespace: sidita-v3
 spec:
   acme:
     email: reza.yoga@gmail.com
