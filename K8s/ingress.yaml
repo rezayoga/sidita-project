@@ -8,7 +8,7 @@ metadata:
   #   nginx.ingress.kubernetes.io/proxy-body-size: "0"
   annotations:
     traefik.ingress.kubernetes.io/router.tls: "true"
-    cert-manager.io/issuer: letsencrypt-cert-manager
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   labels:
     tier: frontend
 spec:
@@ -16,7 +16,7 @@ spec:
   tls:
     - hosts:
         - app.sidita.id
-      secretName: nginx-cert-frontend
+      secretName: app-cert-frontend
   rules:
     - host: app.sidita.id
       http:
@@ -46,7 +46,7 @@ metadata:
     traefik.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
     traefik.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type"
     traefik.ingress.kubernetes.io/cors-expose-headers: "Authorization"
-    cert-manager.io/issuer: letsencrypt-cert-manager
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   labels:
     tier: backend
 spec:
@@ -54,7 +54,7 @@ spec:
   tls:
     - hosts:
         - api.sidita.id
-      secretName: nginx-cert-backend
+      secretName: app-cert-backend
   rules:
     - host: api.sidita.id
       http:

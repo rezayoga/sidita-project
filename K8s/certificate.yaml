@@ -1,21 +1,21 @@
 # Issuer
 ---
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: letsencrypt-cert-manager
+  name: letsencrypt-prod
   namespace: sidita-v3
 spec:
   acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
     email: reza.yoga@gmail.com
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-issuer-account-key
+      name: letsencrypt-prod-account-key
     solvers:
-      - http01:
-          ingress:
-            serviceType: ClusterIP
-            ingressClassName: traefik
+    - http01:
+        ingress:
+          class: traefik
+
 # Frontend: app.sidita.id
 ---
 apiVersion: cert-manager.io/v1
@@ -25,12 +25,12 @@ metadata:
   namespace: sidita-v3
 spec:
   commonName: app.sidita.id
-  secretName: nginx-cert-frontend
+  secretName: app-cert-frontend
   dnsNames:
     - app.sidita.id
   issuerRef:
-    kind: Issuer
-    name: letsencrypt-cert-manager
+    name: letsencrypt-prod
+    kind: ClusterIssuer
 # Backend: api.sidita.id
 ---
 apiVersion: cert-manager.io/v1
@@ -40,9 +40,9 @@ metadata:
   namespace: sidita-v3
 spec:
   commonName: api.sidita.id
-  secretName: nginx-cert-backend
+  secretName: app-cert-backend
   dnsNames:
     - api.sidita.id
   issuerRef:
-    kind: Issuer
-    name: letsencrypt-cert-manager
+    name: letsencrypt-prod
+    kind: ClusterIssuer
