@@ -6,6 +6,8 @@ metadata:
   namespace: sidita-v3
   # annotations:
   #   nginx.ingress.kubernetes.io/proxy-body-size: "0"
+  annotations:
+    traefik.ingress.kubernetes.io/router.tls: "true"
   labels:
     tier: frontend
 spec:
@@ -38,7 +40,8 @@ metadata:
     # nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type"
     # nginx.ingress.kubernetes.io/cors-expose-headers: "Authorization"
  #   nginx.ingress.kubernetes.io/rewrite-target: /$2
-    traefik.ingress.kubernetes.io/cors-allow-origin: "http://app.sidita.id"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/cors-allow-origin: "https://app.sidita.id"
     traefik.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
     traefik.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type"
     traefik.ingress.kubernetes.io/cors-expose-headers: "Authorization"
