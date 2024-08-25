@@ -34,7 +34,6 @@ metadata:
   namespace: sidita-v3
   name: logger-service
 spec:
-  type: NodePort
   selector:
     name: logger
   ports:
