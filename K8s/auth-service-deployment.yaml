@@ -76,9 +76,9 @@ spec:
         - name: IAM_AUTH_URL
           value: https://iam.pln.co.id/svc-core/oauth2/auth
         - name: IAM_CLIENT_ID
-          value: PvYW2FxACt5IXqSQSvbY
+          value: SUlj#ot8EHz8nsGpD3mT
         - name: IAM_CLIENT_SECRET
-          value: FQJvYFhUJWrl@EPocbPDZy2eTMkYuJ
+          value: TB79KwhBVXw4ZYaXhbWG8YjRkyM5rf
         - name: IAM_HR_INFO_URL
           value: https://iam.pln.co.id/svc-core/account/hrinfo
         - name: IAM_ISSUER
@@ -116,7 +116,7 @@ spec:
         - name: SEAWEEDFS_FILER
           value: http://10.66.66.5:8888
         - name: SEAWEEDFS_FILER_READ
-          value: http://10.66.66.5:8888
+          value: http://file.sidita.id
         image: dptpusmanpro/auth-service:0.0.79
         imagePullPolicy: Always
         name: auth
