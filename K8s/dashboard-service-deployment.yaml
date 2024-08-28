@@ -100,7 +100,7 @@ spec:
           - name: SEAWEEDFS_FILER
             value: http://10.66.66.5:8888
           - name: SEAWEEDFS_FILER_READ
-            value: http://file.sidita.id
+            value: https://file.sidita.id
           image: dptpusmanpro/dashboard-service:0.0.1
           imagePullPolicy: Always
           name: dashboard
