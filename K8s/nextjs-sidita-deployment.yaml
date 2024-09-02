@@ -66,7 +66,7 @@ spec:
         - name: NEXT_PUBLIC_API_URL
           value: https://api.sidita.id
         - name: NEXT_PUBLIC_API
-          value: https://sidita.id
+          value: https://app.sidita.id
         - name: NEXT_PUBLIC_SECRET_CRYPTO
           value: sidita
         - name: NEXT_PUBLIC_WEBSOCKET_URL
@@ -74,7 +74,7 @@ spec:
         - name: NEXT_SHARP_PATH
           value: /tmp/node_modules/sharp
         - name: NEXTAUTH_URL
-          value: https://sidita.id
+          value: https://app.sidita.id
         - name: SENTRY_PUBLIC_DNS
           value: https://773c07701f51e77babfde8fcd96a4732@o4506845836148736.ingest.us.sentry.io/4507507465125888
         - name: SENTRY_PUBLIC_TOKEN
