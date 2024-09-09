@@ -40,6 +40,7 @@ services:
       IAM_HR_INFO_URL: "https://iam.pln.co.id/svc-core/account/hrinfo"
       IAM_LOGOUT_URL: "https://iam.pln.co.id/svc-core/oauth2/session/end"
       IAM_POST_LOGOUT_REDIRECT_URI: "https://app.rc-sidita.my.id/login?l=true"
+      FE_BASE_URL: "https://app.rc-sidita.my.id"
 
   logger-service:
     image: dptpusmanpro/logger-service:0.0.20
