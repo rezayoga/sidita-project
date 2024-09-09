@@ -117,6 +117,8 @@ spec:
           value: http://10.66.66.5:8888
         - name: SEAWEEDFS_FILER_READ
           value: https://file.sidita.id
+        - name: FE_BASE_URL
+          value: https://app.sidita.id
         image: dptpusmanpro/auth-service:0.0.79
         imagePullPolicy: Always
         name: auth
