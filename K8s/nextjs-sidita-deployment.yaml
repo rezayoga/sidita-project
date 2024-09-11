@@ -6,7 +6,7 @@ metadata:
   name: nextjs-sidita-hpa
   namespace: sidita-v3
 spec:
-  minReplicas: 1
+  minReplicas: 2
   maxReplicas: 3
   scaleTargetRef:
     apiVersion: apps/v1
@@ -49,7 +49,7 @@ metadata:
   name: nextjs-sidita-deployment
   namespace: sidita-v3
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nextjs-sidita
