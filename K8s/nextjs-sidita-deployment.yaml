@@ -7,7 +7,7 @@ metadata:
   namespace: sidita-v3
 spec:
   minReplicas: 2
-  maxReplicas: 3
+  maxReplicas: 5
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
@@ -100,3 +100,10 @@ spec:
       volumes:
       - name: sharp-cache
         emptyDir: {}  # Example volume type; change if needed
+      resources:
+        requests:
+          cpu: "500m" # Minimum amount of CPU required
+          memory: "512Mi" # Optional, but recommended to specify
+        limits:
+          cpu: "1000m" # Maximum amount of CPU allowed
+          memory: "1Gi" # Optional, but recommended to specify
