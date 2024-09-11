@@ -60,7 +60,7 @@ spec:
     spec:
       containers:
       - name: nextjs-sidita
-        image: dptpusmanpro/uat-nextjs-sidita:776
+        image: dptpusmanpro/uat-nextjs-sidita:778
         imagePullPolicy: Always
         env:
         - name: NEXT_PUBLIC_API_URL
