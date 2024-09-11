@@ -78,8 +78,8 @@ spec:
         - containerPort: 8082
         resources:
           requests:
-            cpu: "128m" # Minimum amount of CPU required
-            memory: "128Mi" # Optional, but recommended to specify
-          limits:
-            cpu: "1024m" # Maximum amount of CPU allowed
+            cpu: "500m" # Minimum amount of CPU required
             memory: "512Mi" # Optional, but recommended to specify
+          limits:
+            cpu: "1000m" # Maximum amount of CPU allowed
+            memory: "1Gi" # Optional, but recommended to specify

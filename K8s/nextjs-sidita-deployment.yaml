@@ -100,3 +100,10 @@ spec:
       volumes:
       - name: sharp-cache
         emptyDir: {}  # Example volume type; change if needed
+      resources:
+        requests:
+          cpu: "500m" # Minimum amount of CPU required
+          memory: "512Mi" # Optional, but recommended to specify
+        limits:
+          cpu: "1000m" # Maximum amount of CPU allowed
+          memory: "1Gi" # Optional, but recommended to specify
